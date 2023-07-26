@@ -11,13 +11,12 @@
 </template>
 
 <script setup>
-import { useToastStore } from '../stores/toast'
-import { computed } from 'vue'
+import { computed  } from 'vue'
 
-const toastStore = useToastStore()
+const toastStore = $SadrixToastable
 
 const classes = computed(() => {
-    let classes = [toastStore.className]
+    let classes = ['toast-message']
     classes.push(toastStore.color)
     return classes
 })
@@ -26,7 +25,6 @@ const hide = () => {
     toastStore.hide()
 }
 
-const style = {}
 </script>
 
 <style lang="scss" scoped>
@@ -95,7 +93,10 @@ const style = {}
     &.warning .toast-container {
         border: 1px solid #F9C06C;
         background-color: rgba(#F9C06C, 0.8);
-        color: #1f1f1f;
+
+        .text {
+            color: #1f1f1f;
+        }
     }
 
     &.purple .toast-container,

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #ed4c4c;
+      }
+
+      .cls-3 {
+        fill: #333;
+        isolation: isolate;
+        opacity: .5;
+      }
+
+      .cls-4 {
+        fill: #1a1a1a;
+      }
+    </style>
+  </defs>
+  <circle class="cls-4" cx="256" cy="256" r="256"/>
+  <g>
+    <polygon class="cls-1" points="429.85 176.15 429.85 176.15 259.08 306.46 259.08 386.77 315.08 370.92 456 208.77 456 184 429.85 176.15"/>
+    <polygon class="cls-2" points="378.62 307.38 378.62 307.38 325.85 368.15 422.46 340.77 378.62 307.38"/>
+    <path id="SadrixLogoShadowRight" class="cls-3" d="m378.62,307.38l-52.77,60.61,35.38-10,20.62-42.31,34.77,26.61,5.85-1.69-43.85-33.23Z"/>
+    <polygon class="cls-1" points="418 262 418 262 382.77 302.46 429.85 338.62 456 331.23 456 306.46 418 262"/>
+    <polygon class="cls-1" points="315.23 142 259.08 125.23 259.08 208.77 318.15 253.54 374.31 210.77 315.23 142"/>
+    <polygon class="cls-1" points="252.92 125.23 56 184 56 233.38 252.92 208.77 252.92 125.23 252.92 125.23"/>
+    <polygon class="cls-2" points="130.61 230.46 130.61 230.46 62.92 238.77 120.61 283.69 240.46 298.62 130.61 230.46"/>
+    <path id="SadrixLogoShadowLeft" class="cls-3" d="m130.62,230.46l28,17.39-82.92.92-12.77-10,67.69-8.31Z"/>
+    <polygon class="cls-1" points="56 281.85 56 331.23 252.92 386.77 252.92 306.46 56 281.85"/>
+  </g>
+</svg>

@@ -1,21 +1,11 @@
 import Toastable from "./Toastable"
 import ToastMessage from './components/ToastMessage.vue'
-import { useToastStore } from './stores/toast'
-
-const toastStore = useToastStore()
+import { reactive } from 'vue'
 
 const PLUGIN_LABEL = '[@sadrix/toastable-vue]'
 
-const detectDisableLogs = (config) => {
-    return config && typeof config == 'boolean' && config.hasOwnProperty('disableLogs') && config.disableLogs ? true : false 
-}
-
-const detectMaxWidth = (config) => {
-    const def = '1400px'
-    if (config && typeof config == 'string' && config.hasOwnProperty('maxWidth') && typeof config.maxWidth == 'string')
-        return config.maxWidth
-    else
-        return def
+const detectDisableLogger = (config) => {
+    return config && typeof config == 'object' && config.hasOwnProperty('disableLogger') && config.disableLogger ? true : false 
 }
 
 const detectComponentName = (config) => {
@@ -26,29 +16,48 @@ const detectComponentName = (config) => {
         return def
 }
 
-const detectClassName = (config) => {
-    const def = 'toast-message'
-    if (config && typeof config == 'object' && config.hasOwnProperty('className') && typeof config.componentName == 'string')
-        return config.className
-    else
-        return def
-}
-
 export default {
     install(app, config) {
         try {
-            const disableLogs = detectDisableLogs(config)
-
+            const disableLogger = detectDisableLogger(config)
             const componentName = detectComponentName(config)
 
-            const className = detectClassName(config)
+            let $SadrixToastable = reactive({
+                active: false,
+                color: 'success',
+                text: '',
+                timeout: 3000,
+                timer: null,
+                disableLogs: disableLogger,
+                show(toastable) {
+                    this.active  = true
+                    this.text    = toastable.text
+                    this.color    = toastable.color
+                    this.timeout = toastable.timeout
 
-            const maxWidth = detectMaxWidth(config)
+                    // if timer is on clear it first
+                    if(this.timer) clearTimeout(this.timer)
+
+                    // set timer for auto hide
+                    this.timer = setTimeout(() => {
+                        this.hide()
+                    }, this.timeout)
+                },
+                hide() {
+                    this.active = false
+                    if(this.timer) {
+                        clearTimeout(this.timer)
+                        this.timer = null
+                    }
+                }
+            })
+
+            app.config.globalProperties.$SadrixToastable = $SadrixToastable
+            window.$SadrixToastable = $SadrixToastable
 
             // update plugin store state
-            toastStore.disableLogs = disableLogs
-            toastStore.className = className
-            toastStore.maxWidth = maxWidth
+            // toastStore.disableLogger = 
+            // toastStore.className = 
 
             // set global classes accessable
             app.config.globalProperties.$Toastable = Toastable
@@ -57,7 +66,7 @@ export default {
 
             app.component(componentName, ToastMessage)
 
-            if (!disableLogs)
+            if (!disableLogger)
                 console.log(`${PLUGIN_LABEL}: Plugin installed successfully.`)
 
         } catch(e) {

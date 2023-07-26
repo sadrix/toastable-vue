@@ -1,5 +1,3 @@
-import { useToastStore } from './stores/toast'
-
 export default class Toastable {
     constructor({text, color, timeout = 3000, closeable = true, autoclose = true}) {
         this.text = text
@@ -7,7 +5,6 @@ export default class Toastable {
         this.closeable = closeable
         this.autoclose = autoclose
         this.timeout = timeout
-        this.store = useToastStore()
         return this
     }
 
@@ -27,10 +24,10 @@ export default class Toastable {
     }
 
     show() {
-        this.store.show(this)
+        $SadrixToastable.show(this)
     }
 
     hide() {
-        this.store.hide()
+        $SadrixToastable.hide()
     }
 }
