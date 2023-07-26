@@ -1,0 +1,40 @@
+{
+  "name": "@sadrix/toastable-vue",
+  "version": "0.0.1",
+  "description": "Vue plugin to show single toast message in various colors with the ability to customize and manage events.",
+  "files": "dist/*",
+  "main": "dist/toastable-vue.es.js",
+  "scripts": {
+    "postinstall": "node attribution.js",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadrix/toastable-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "vue.js",
+    "toast",
+    "toaster",
+    "toast message",
+    "alert",
+    "ui"
+  ],
+  "author": "Sadrix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sadrix/toastable-vue/issues"
+  },
+  "dependencies": {
+    "pinia": "^2.0.0",
+    "vue": "^3.0.0"
+  },
+  "homepage": "https://github.com/sadrix/toastable-vue#readme",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0",
+    "sass": "^1.64.1"
+  }
+}
