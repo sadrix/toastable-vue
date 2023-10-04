@@ -1,6 +1,6 @@
 {
   "name": "@sadrix/toastable-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue plugin to show single toast message in various colors with the ability to customize and manage events.",
   "files": "dist/*",
   "main": "dist/toastable-vue.es.js",

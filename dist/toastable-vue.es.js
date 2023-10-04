@@ -1,4 +1,4 @@
-import { computed as u, openBlock as h, createBlock as d, Transition as m, withCtx as _, withDirectives as p, createElementVNode as r, normalizeClass as b, toDisplayString as x, unref as l, vShow as T, reactive as g } from "vue";
+import { computed as u, openBlock as h, createBlock as d, Transition as m, withCtx as _, withDirectives as b, createElementVNode as r, normalizeClass as p, toDisplayString as x, unref as l, vShow as T, reactive as g } from "vue";
 class c {
   constructor({ text: e, color: s, timeout: a = 3e3, closeable: o = !0, autoclose: i = !0 }) {
     return this.text = e, this.color = s, this.closeable = o, this.autoclose = i, this.timeout = a, this;
@@ -38,8 +38,8 @@ const v = (t, e) => {
       mode: "in-out"
     }, {
       default: _(() => [
-        p(r("div", {
-          class: b(s.value),
+        b(r("div", {
+          class: p(s.value),
           onClick: a
         }, [
           r("div", w, [
@@ -52,7 +52,7 @@ const v = (t, e) => {
       _: 1
     }));
   }
-}, $ = /* @__PURE__ */ v(y, [["__scopeId", "data-v-760d6b3a"]]), n = "[@sadrix/toastable-vue]", S = (t) => !!(t && typeof t == "object" && t.hasOwnProperty("disableLogger") && t.disableLogger), L = (t) => {
+}, $ = /* @__PURE__ */ v(y, [["__scopeId", "data-v-b3ac979b"]]), n = "[@sadrix/toastable-vue]", S = (t) => !!(t && typeof t == "object" && t.hasOwnProperty("disableLogger") && t.disableLogger), L = (t) => {
   const e = "ToastMessage";
   return t && typeof t == "object" && t.hasOwnProperty("componentName") && typeof t.componentName == "string" ? t.componentName : e;
 }, C = {

@@ -39,6 +39,10 @@ const hide = () => {
     transition: 0.5s ease;
     height: max-content;
 
+    @media screen and (max-width: 992px) {
+        padding: 16px 0 0;
+    }
+
     .toast-container {
         position: relative;
         border-radius: 8px;
@@ -50,7 +54,7 @@ const hide = () => {
         margin-left: auto;
 
         @media screen and (max-width: 1480px) {
-            width: 1200px;
+            max-width: 1200px;
         }
         .text {
             position: relative;
